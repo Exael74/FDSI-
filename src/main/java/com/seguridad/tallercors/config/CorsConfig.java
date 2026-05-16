@@ -9,6 +9,8 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+        // ⚠️ CONFIGURACIÓN INTENCIONALMENTE VULNERABLE PARA DEMOSTRACIÓN EDUCATIVA.
+        // No usar en producción: permite cualquier origen con credenciales.
         registry.addMapping("/api/**")
                 .allowedOriginPatterns("*")
                 .allowedMethods("GET", "POST", "OPTIONS")
